@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"os"
 	"strings"
 )
 
@@ -106,6 +107,11 @@ func handlerProjectInfo(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
+	file, err := os.Open(".env") // For read access.
+	if err != nil {
+		fmt.Printf("\n\nThe Marshal failed.")
+	}
+
 	http.HandleFunc("/projectinfo/v1/", handlerProjectInfo)
-	http.ListenAndServe("127.0.0.1:8080", nil) // Keep serving all requests that is recieved.
+	http.ListenAndServe("0.0.0.0:"+os.Getenv("PORT"), nil) // Keep serving all requests that is recieved.
 }
