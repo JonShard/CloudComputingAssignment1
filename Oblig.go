@@ -29,9 +29,9 @@ func CreateURL(URLIn string) string {
 	}
 
 	site = parts[3]
-	user = parts[5]
-	repo = parts[6]
-	outputURL := "http://api." + site + "/" + user + "/" + repo
+	user = parts[4]
+	repo = parts[5]
+	outputURL := "http://api." + site + "/repo/" + user + "/" + repo
 
 	fmt.Printf("\n\tOutputURL: " + outputURL)
 
