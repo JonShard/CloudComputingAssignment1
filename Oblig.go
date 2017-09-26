@@ -31,7 +31,7 @@ func CreateURL(URLIn string) string {
 	site = parts[3]
 	user = parts[5]
 	repo = parts[6]
-	outputURL := "http://api." + site + "/repos/" + user + "/" + repo
+	outputURL := "http://api." + site + "/" + user + "/" + repo
 
 	fmt.Printf("\n\tOutputURL: " + outputURL)
 
