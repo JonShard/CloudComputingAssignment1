@@ -1,6 +1,3 @@
-//https://stackoverflow.com/questions/24299818/golang-how-to-decode-json-into-structs
-//https://stackoverflow.com/questions/17156371/how-to-get-json-response-in-golang
-// Fikk hjelp av bjoorn.
 package main
 
 import (
@@ -106,12 +103,7 @@ func handlerProjectInfo(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	/*
-		file, err := os.Open(".env") // For read access.
-		if err != nil {
-			fmt.Printf("\n\nThe Marshal failed.")
-		}
-	*/
+
 	http.HandleFunc("/projectinfo/v1/", handlerProjectInfo)
 	http.ListenAndServe("0.0.0.0:"+os.Getenv("PORT"), nil) // Keep serving all requests that is recieved.
 }
