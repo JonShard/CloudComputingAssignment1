@@ -24,7 +24,7 @@ func CreateURL(URLIn string) string {
 	parts = strings.Split(URLIn, "/")
 
 	var site, user, repo string //Will store each part of the URL that will be used to GET the jsons.
-	if len(parts) != 7 {        //Error if wrong num of parameters.
+	if len(parts) != 6 {        //Error if wrong num of parameters.
 		return ""
 	}
 
